@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rekrutmen AURI</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .form-container {
+      max-width: 500px;
+      margin: auto;
+    }
+
+    input, textarea, button {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 12px;
+      margin: 8px 0;
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    button {
+      cursor: pointer;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="form-container">
+    <h1>Rekrutmen AURI</h1>
+
+    <form id="rekrutmenForm">
+
+      <input
+        type="text"
+        id="nama"
+        placeholder="Nama lengkap"
+        required
+      >
+
+      <input
+        type="text"
+        id="roblox"
+        placeholder="Username Roblox"
+        required
+      >
+
+      <input
+        type="text"
+        id="discord"
+        placeholder="Username Discord"
+        required
+      >
+
+      <textarea
+        id="alasan"
+        placeholder="Alasan ingin bergabung"
+        required
+      ></textarea>
+
+      <button type="submit">
+        Kirim Pendaftaran
+      </button>
+
+    </form>
+  </div>
+
+  <script>
+    const WEBHOOK_URL = "https://discord.com/api/webhooks/1550900442299367550/8gwhYyu_9msE65Og6Bi-DizrGMjDJs0kflMaVJCyFXfPSNc0bFrJJR5eo2wTcEMwoWcs";
+
+    document.getElementById("rekrutmenForm").addEventListener("submit", async function(event) {
+      event.preventDefault();
+
+      const nama = document.getElementById("nama").value;
+      const roblox = document.getElementById("roblox").value;
+      const discord = document.getElementById("discord").value;
+      const alasan = document.getElementById("alasan").value;
+
+      const data = {
+        embeds: [{
+          title: "📋 PENDAFTARAN BARU AURI",
+          fields: [
+            {
+              name: "Nama",
+              value: nama
+            },
+            {
+              name: "Username Roblox",
+              value: roblox
+            },
+            {
+              name: "Discord",
+              value: discord
+            },
+            {
+              name: "Alasan",
+              value: alasan
+            }
+          ]
+        }]
+      };
+
+      try {
+        const response = await fetch(WEBHOOK_URL, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(data)
+        });
+
+        if (response.ok) {
+          alert("✅ Pendaftaran berhasil dikirim!");
+          document.getElementById("rekrutmenForm").reset();
+        } else {
+          alert("❌ Pendaftaran gagal dikirim.");
+        }
+
+      } catch (error) {
+        alert("❌ Terjadi kesalahan.");
+      }
+    });
+  </script>
+
+</body>

@@ -1,0 +1,389 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f1f3f5;
+    color: #222;
+}
+
+
+/* HEADER */
+
+header {
+    text-align: center;
+    padding: 45px 20px 35px;
+    background: #101820;
+    color: white;
+}
+
+header h1 {
+    font-size: 45px;
+    margin: 0;
+    letter-spacing: 5px;
+}
+
+header p {
+    font-size: 17px;
+    margin-top: 8px;
+}
+
+.logo-auri {
+    width: 110px;
+    height: 110px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+
+/* NAVBAR */
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px;
+    background: white;
+    flex-wrap: wrap;
+}
+
+nav a {
+    text-decoration: none;
+    color: #222 !important;
+    padding: 10px 16px;
+    border-radius: 6px;
+}
+
+nav a:hover {
+    background: #e5e7eb;
+}
+
+
+/* MAIN */
+
+main {
+    text-align: center;
+    padding: 30px 20px;
+}
+
+main h2 {
+    font-size: 30px;
+}
+
+main p {
+    font-size: 17px;
+}
+
+
+/* SATUAN */
+
+.satuan {
+    padding: 50px 20px;
+    background: white;
+    text-align: center;
+}
+
+.satuan-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: 30px auto;
+}
+
+.satuan-card {
+    background: #f8fafc;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 25px;
+}
+
+.satuan-card h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #222;
+}
+
+.satuan-card p {
+    font-size: 15px;
+    color: #555;
+}
+
+
+/* PERSONEL */
+
+.personel {
+    padding: 50px 20px;
+    text-align: center;
+    background: #f1f3f5;
+}
+
+.personel-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    max-width: 900px;
+    margin: 30px auto;
+}
+
+.personel-card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 25px;
+}
+
+.personel-card h3 {
+    margin-bottom: 10px;
+}
+
+.personel-card p {
+    color: #555;
+}
+
+
+/* KEGIATAN */
+
+.kegiatan {
+    padding: 50px 20px;
+    text-align: center;
+    background: white;
+}
+
+.kegiatan-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    max-width: 900px;
+    margin: 30px auto;
+}
+
+.kegiatan-card {
+    background: #f5f6f7;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 25px;
+}
+
+.kegiatan-card h3 {
+    margin-bottom: 10px;
+}
+
+.kegiatan-card p {
+    color: #555;
+}
+
+
+/* REGULASI */
+
+.regulasi {
+    padding: 50px 20px;
+    text-align: center;
+    background: #f1f3f5;
+}
+
+.regulasi-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    max-width: 900px;
+    margin: 30px auto;
+}
+
+.regulasi-card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 25px;
+}
+
+.regulasi-card h3 {
+    margin-bottom: 10px;
+}
+
+.regulasi-card p {
+    color: #555;
+}
+
+
+/* REKRUTMEN */
+
+.rekrutmen {
+    padding: 60px 20px;
+    text-align: center;
+    background: #101820;
+    color: white;
+}
+
+.rekrutmen-box {
+    max-width: 600px;
+    margin: 30px auto 0;
+    padding: 30px;
+    background: white;
+    color: #222;
+    border-radius: 12px;
+}
+
+.rekrutmen-box h3 {
+    font-size: 24px;
+}
+
+.rekrutmen-box p {
+    color: #555;
+    line-height: 1.6;
+}
+
+
+/* TOMBOL */
+
+.btn-rekrut {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 22px;
+    background: #101820;
+    color: white !important;
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+.btn-rekrut:hover {
+    background: #263544;
+}
+
+
+/* STATISTIK */
+
+.statistik {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    max-width: 700px;
+    margin: 30px auto;
+}
+
+.stat-card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.stat-card h3 {
+    font-size: 30px;
+    margin: 0;
+}
+
+.stat-card p {
+    margin: 8px 0 0;
+    color: #555;
+}
+
+
+/* FORM REKRUTMEN */
+
+form {
+    max-width: 500px;
+    margin: 30px auto;
+    text-align: left;
+}
+
+form label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+form input,
+form select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+form button {
+    width: 100%;
+    margin-top: 25px;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    background: #101820;
+    color: white;
+    font-size: 16px;
+}
+
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    padding: 35px 20px;
+    background: #0b1117;
+    color: white;
+}
+
+footer h3 {
+    margin: 0 0 10px;
+}
+
+footer p {
+    margin: 6px 0;
+    font-size: 14px;
+}
+
+footer .copyright {
+    margin-top: 20px;
+    color: #aaa;
+    font-size: 12px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    header h1 {
+        font-size: 38px;
+    }
+
+    .logo-auri {
+        width: 90px;
+        height: 90px;
+    }
+
+    nav {
+        gap: 3px;
+    }
+
+    nav a {
+        font-size: 13px;
+        padding: 8px 10px;
+    }
+
+    .statistik {
+        grid-template-columns: 1fr;
+        max-width: 300px;
+    }
+
+}
+html {
+    scroll-behavior: smooth;
+}
+.btn-discord {
+    display: inline-block;
+    margin-top: 15px;
+    margin-left: 8px;
+    padding: 12px 22px;
+    background: #5865F2;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+.btn-discord:hover {
+    opacity: 0.9;
+}
