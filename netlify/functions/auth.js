@@ -95,8 +95,6 @@ exports.handler = async (event) => {
     const member = await memberResponse.json();
 
     if (!memberResponse.ok) {
-      console.error("Member Error:", member);
-
       return {
         statusCode: 403,
         body: "Kamu belum berada di server Discord."
@@ -129,20 +127,22 @@ exports.handler = async (event) => {
     }
 
     // =========================
-    // HASIL LOGIN
+    // KEMBALI KE WEBSITE
     // =========================
+    const params = new URLSearchParams({
+      login: "success",
+      username: user.username,
+      user_id: user.id,
+      jabatan: jabatan,
+      akses: akses
+    });
+
     return {
-      statusCode: 200,
+      statusCode: 302,
       headers: {
-        "Content-Type": "application/json"
+        Location: `https://auriofficiall.netlify.app/?${params.toString()}`
       },
-      body: JSON.stringify({
-        success: true,
-        username: user.username,
-        user_id: user.id,
-        jabatan: jabatan,
-        akses: akses
-      })
+      body: ""
     };
 
   } catch (error) {
