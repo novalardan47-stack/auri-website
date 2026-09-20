@@ -4,6 +4,72 @@
 
 
 // ========================================
+// CEK HASIL LOGIN DISCORD
+// ========================================
+
+const params = new URLSearchParams(window.location.search);
+
+const login = params.get("login");
+const username = params.get("username");
+const jabatan = params.get("jabatan");
+const akses = params.get("akses");
+
+if (login === "success" && username && jabatan) {
+
+    // Simpan data login
+    localStorage.setItem("discord_username", username);
+    localStorage.setItem("discord_jabatan", jabatan);
+    localStorage.setItem("discord_akses", akses || "personel");
+
+    // Hapus parameter login dari URL
+    window.history.replaceState(
+        {},
+        document.title,
+        window.location.pathname
+    );
+
+    console.log("Login Discord berhasil:", username, jabatan);
+}
+
+
+// ========================================
+// TAMPILKAN DATA AKUN DISCORD
+// ========================================
+
+const savedUsername =
+    localStorage.getItem("discord_username");
+
+const savedJabatan =
+    localStorage.getItem("discord_jabatan");
+
+const savedAkses =
+    localStorage.getItem("discord_akses");
+
+if (savedUsername && savedJabatan) {
+
+    const header = document.querySelector("header");
+
+    if (header) {
+
+        const akun = document.createElement("div");
+
+        akun.style.marginTop = "15px";
+        akun.style.padding = "12px";
+        akun.style.borderRadius = "10px";
+        akun.style.background = "rgba(255,255,255,0.1)";
+        akun.style.display = "inline-block";
+
+        akun.innerHTML =
+            "<strong>✓ Login Discord</strong><br>" +
+            "Username: " + savedUsername + "<br>" +
+            "Jabatan: " + savedJabatan;
+
+        header.appendChild(akun);
+    }
+}
+
+
+// ========================================
 // FORM REKRUTMEN
 // ========================================
 
