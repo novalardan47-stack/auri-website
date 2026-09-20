@@ -30,7 +30,7 @@ exports.handler = async (event) => {
     // TUKAR CODE DISCORD
     // =========================
     const tokenResponse = await fetch(
-      "https://discord.com/api/oauth2/token",
+      "https://discord.com/api/v10/oauth2/token",
       {
         method: "POST",
         headers: {
