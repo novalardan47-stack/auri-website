@@ -22,6 +22,7 @@
 
 </header>
 
+
 <nav>
     <a href="index.html">Beranda</a>
     <a href="satuan.html">Satuan</a>
@@ -30,41 +31,148 @@
     <a href="rekrutmen.html">Rekrutmen</a>
 </nav>
 
+
 <main>
 
     <h2>Regulasi AURI</h2>
 
     <p>Peraturan AURI Roleplay</p>
 
+
+    <!-- STATUS AKSES -->
+
+    <div
+        id="status-akses"
+        style="
+            margin: 20px 0;
+            padding: 12px;
+            border-radius: 10px;
+            text-align: center;
+        ">
+    </div>
+
+
+    <!-- REGULASI -->
+
     <div class="regulasi-container">
 
+
+        <!-- REGULASI SERAGAM -->
+
         <div class="regulasi-card">
+
             <h3>Regulasi Seragam</h3>
+
             <p>
                 Ketentuan penggunaan seragam
                 sesuai kegiatan roleplay.
             </p>
+
         </div>
 
+
+        <!-- PERATURAN PERSONEL -->
+
         <div class="regulasi-card">
+
             <h3>Peraturan Personel</h3>
+
             <p>
                 Ketentuan dan tata tertib
                 bagi seluruh personel.
             </p>
+
         </div>
 
+
+        <!-- SOP ROLEPLAY -->
+
         <div class="regulasi-card">
+
             <h3>SOP Roleplay</h3>
+
             <p>
                 Standar prosedur kegiatan
                 dalam lingkungan roleplay.
             </p>
+
         </div>
+
 
     </div>
 
 </main>
 
+
+<script>
+
+    // ========================================
+    // CEK AKSES DISCORD
+    // ========================================
+
+    const akses =
+        localStorage.getItem("discord_akses");
+
+    const username =
+        localStorage.getItem("discord_username");
+
+    const jabatan =
+        localStorage.getItem("discord_jabatan");
+
+
+    // ========================================
+    // ROLE PENGELOLA
+    // ========================================
+
+    const rolePengelola = [
+        "admin",
+        "panglima",
+        "wapang",
+        "ksau",
+        "wakasau"
+    ];
+
+
+    // ========================================
+    // STATUS AKSES
+    // ========================================
+
+    const status =
+        document.getElementById("status-akses");
+
+
+    if (!username) {
+
+        status.innerHTML =
+            "⚠️ Silakan login dengan Discord terlebih dahulu.";
+
+    } else if (rolePengelola.includes(akses)) {
+
+        status.innerHTML =
+            "<strong>✓ Mode Pengelola</strong><br>" +
+            "Login sebagai: " +
+            username +
+            "<br>" +
+            "Jabatan: " +
+            jabatan;
+
+    } else {
+
+        status.innerHTML =
+            "<strong>✓ Mode Anggota</strong><br>" +
+            "Login sebagai: " +
+            username +
+            "<br>" +
+            "Jabatan: " +
+            jabatan +
+            "<br><br>" +
+            "Kamu dapat melihat regulasi, tetapi tidak dapat mengelolanya.";
+
+    }
+
+</script>
+
+
 </body>
+
 </html>
